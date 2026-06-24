@@ -61,15 +61,13 @@ export function StrategiesSection() {
 
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {strategies.map((s) => (
-            <Link key={s.tag} href={s.href} style={{
+            <Link key={s.tag} href={s.href} className="hover-lift" style={{
               display:'flex',flexDirection:'column',
               background: s.featured ? 'linear-gradient(135deg, #0D1526 0%, #1B2A4A 100%)' : '#F4F6F9',
               borderRadius:'10px',padding:'28px',textDecoration:'none',
               border: s.featured ? '1px solid rgba(201,168,76,0.3)' : '1px solid rgba(27,42,74,0.07)',
               transition:'all 0.25s',position:'relative',overflow:'hidden',
-            }}
-              onMouseOver={e => { e.currentTarget.style.transform='translateY(-4px)'; e.currentTarget.style.boxShadow='0 12px 40px rgba(27,42,74,0.15)' }}
-              onMouseOut={e => { e.currentTarget.style.transform='none'; e.currentTarget.style.boxShadow='none' }}>
+            }}>
 
               {s.featured && (
                 <div style={{position:'absolute',top:0,left:0,right:0,bottom:0,opacity:0.04,backgroundImage:'linear-gradient(rgba(201,168,76,1) 1px, transparent 1px), linear-gradient(90deg, rgba(201,168,76,1) 1px, transparent 1px)',backgroundSize:'30px 30px'}} />

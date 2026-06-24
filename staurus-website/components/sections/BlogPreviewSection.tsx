@@ -55,15 +55,13 @@ export function BlogPreviewSection() {
 
         <div className="grid lg:grid-cols-3 gap-8">
           {placeholderPosts.map((post, i) => (
-            <Link key={post.slug} href={`/blog/${post.slug}`} style={{
+            <Link key={post.slug} href={`/blog/${post.slug}`} className="hover-lift-soft" style={{
               display:'flex',flexDirection:'column',
               background:'#fff',borderRadius:'10px',overflow:'hidden',
               border:'1px solid rgba(27,42,74,0.07)',textDecoration:'none',
               boxShadow:'0 4px 24px rgba(27,42,74,0.06)',
               transition:'all 0.25s',
-            }}
-              onMouseOver={e => { e.currentTarget.style.transform='translateY(-4px)'; e.currentTarget.style.boxShadow='0 12px 40px rgba(27,42,74,0.12)' }}
-              onMouseOut={e => { e.currentTarget.style.transform='none'; e.currentTarget.style.boxShadow='0 4px 24px rgba(27,42,74,0.06)' }}>
+            }}>
 
               {/* Image placeholder -- replaced with Cloudinary URL from Supabase */}
               <div style={{

@@ -59,9 +59,7 @@ export function Navigation() {
                 onMouseEnter={() => link.children && setActiveDropdown(link.label)}
                 onMouseLeave={() => setActiveDropdown(null)}>
                 {link.children ? (
-                  <button style={{display:'flex',alignItems:'center',gap:'4px',padding:'8px 16px',color:'rgba(255,255,255,0.8)',fontFamily:'Inter,sans-serif',fontSize:'0.875rem',fontWeight:500,background:'none',border:'none',cursor:'pointer',borderRadius:'6px'}}
-                    onMouseOver={e => (e.currentTarget.style.background='rgba(255,255,255,0.06)')}
-                    onMouseOut={e => (e.currentTarget.style.background='none')}>
+                  <button className="nav-menu-btn" style={{display:'flex',alignItems:'center',gap:'4px',padding:'8px 16px',color:'rgba(255,255,255,0.8)',fontFamily:'Inter,sans-serif',fontSize:'0.875rem',fontWeight:500,background:'none',border:'none',cursor:'pointer',borderRadius:'6px'}}>
                     {link.label}
                     <ChevronDown size={13} style={{transition:'transform 0.2s',transform: activeDropdown === link.label ? 'rotate(180deg)' : 'none'}} />
                   </button>
@@ -78,9 +76,7 @@ export function Navigation() {
                 {link.children && activeDropdown === link.label && (
                   <div style={{position:'absolute',top:'100%',left:0,marginTop:'4px',width:'220px',background:'#111C33',border:'1px solid rgba(255,255,255,0.1)',borderRadius:'6px',boxShadow:'0 20px 60px rgba(0,0,0,0.4)',overflow:'hidden',zIndex:100}}>
                     {link.children.map((child) => (
-                      <Link key={child.href} href={child.href} style={{display:'flex',flexDirection:'column',padding:'12px 16px',borderBottom:'1px solid rgba(255,255,255,0.05)',textDecoration:'none',transition:'background 0.15s'}}
-                        onMouseOver={e => (e.currentTarget.style.background='rgba(255,255,255,0.05)')}
-                        onMouseOut={e => (e.currentTarget.style.background='transparent')}>
+                      <Link key={child.href} href={child.href} className="nav-dropdown-item" style={{display:'flex',flexDirection:'column',padding:'12px 16px',borderBottom:'1px solid rgba(255,255,255,0.05)',textDecoration:'none',transition:'background 0.15s'}}>
                         <span style={{fontSize:'0.875rem',fontWeight:500,color:'#fff'}}>{child.label}</span>
                         <span style={{fontSize:'0.65rem',color:'rgba(255,255,255,0.45)',marginTop:'2px'}}>{child.desc}</span>
                       </Link>
@@ -92,10 +88,8 @@ export function Navigation() {
           </nav>
 
           <div className="hidden lg:flex items-center gap-3">
-            <Link href="https://deals.staurusproperties.com" target="_blank"
-              style={{display:'inline-flex',alignItems:'center',gap:'6px',background:'#C9A84C',color:'#1B2A4A',fontWeight:600,padding:'10px 20px',borderRadius:'6px',fontSize:'0.8125rem',letterSpacing:'0.02em',textDecoration:'none',transition:'all 0.2s'}}
-              onMouseOver={e => (e.currentTarget.style.background='#D4B96A')}
-              onMouseOut={e => (e.currentTarget.style.background='#C9A84C')}>
+            <Link href="https://deals.staurusproperties.com" target="_blank" className="nav-cta"
+              style={{display:'inline-flex',alignItems:'center',gap:'6px',background:'#C9A84C',color:'#1B2A4A',fontWeight:600,padding:'10px 20px',borderRadius:'6px',fontSize:'0.8125rem',letterSpacing:'0.02em',textDecoration:'none',transition:'all 0.2s'}}>
               View Live Deals <ArrowRight size={13} />
             </Link>
           </div>

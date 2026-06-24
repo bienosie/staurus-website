@@ -92,10 +92,8 @@ export function Footer() {
                 { href: 'https://x.com/staurusproperti', icon: Twitter },
                 { href: 'https://www.youtube.com/@Staurus_Properties', icon: Youtube },
               ].map(({ href, icon: Icon }) => (
-                <a key={href} href={href} target="_blank" rel="noopener noreferrer"
-                  style={{width:'36px',height:'36px',borderRadius:'6px',background:'rgba(255,255,255,0.07)',display:'flex',alignItems:'center',justifyContent:'center',color:'rgba(255,255,255,0.5)',transition:'all 0.2s'}}
-                  onMouseOver={e => { e.currentTarget.style.background='rgba(201,168,76,0.2)'; e.currentTarget.style.color='#C9A84C' }}
-                  onMouseOut={e => { e.currentTarget.style.background='rgba(255,255,255,0.07)'; e.currentTarget.style.color='rgba(255,255,255,0.5)' }}>
+                <a key={href} href={href} target="_blank" rel="noopener noreferrer" className="footer-social"
+                  style={{width:'36px',height:'36px',borderRadius:'6px',background:'rgba(255,255,255,0.07)',display:'flex',alignItems:'center',justifyContent:'center',color:'rgba(255,255,255,0.5)',transition:'all 0.2s'}}>
                   <Icon size={15} />
                 </a>
               ))}
@@ -108,9 +106,7 @@ export function Footer() {
             <ul className="flex flex-col gap-2.5">
               {footerLinks.strategies.map(link => (
                 <li key={link.href}>
-                  <Link href={link.href} style={{fontSize:'0.8125rem',color:'rgba(255,255,255,0.5)',textDecoration:'none',transition:'color 0.15s'}}
-                    onMouseOver={e => (e.currentTarget.style.color='#C9A84C')}
-                    onMouseOut={e => (e.currentTarget.style.color='rgba(255,255,255,0.5)')}>
+                  <Link href={link.href} className="footer-link" style={{fontSize:'0.8125rem',color:'rgba(255,255,255,0.5)',textDecoration:'none',transition:'color 0.15s'}}>
                     {link.label}
                   </Link>
                 </li>
@@ -123,9 +119,7 @@ export function Footer() {
             <ul className="flex flex-col gap-2.5">
               {footerLinks.markets.map(link => (
                 <li key={link.href}>
-                  <Link href={link.href} style={{fontSize:'0.8125rem',color:'rgba(255,255,255,0.5)',textDecoration:'none',transition:'color 0.15s'}}
-                    onMouseOver={e => (e.currentTarget.style.color='#C9A84C')}
-                    onMouseOut={e => (e.currentTarget.style.color='rgba(255,255,255,0.5)')}>
+                  <Link href={link.href} className="footer-link" style={{fontSize:'0.8125rem',color:'rgba(255,255,255,0.5)',textDecoration:'none',transition:'color 0.15s'}}>
                     {link.label}
                   </Link>
                 </li>
@@ -138,9 +132,7 @@ export function Footer() {
             <ul className="flex flex-col gap-2.5">
               {footerLinks.company.map(link => (
                 <li key={link.href}>
-                  <Link href={link.href} style={{fontSize:'0.8125rem',color:'rgba(255,255,255,0.5)',textDecoration:'none',transition:'color 0.15s'}}
-                    onMouseOver={e => (e.currentTarget.style.color='#C9A84C')}
-                    onMouseOut={e => (e.currentTarget.style.color='rgba(255,255,255,0.5)')}>
+                  <Link href={link.href} className="footer-link" style={{fontSize:'0.8125rem',color:'rgba(255,255,255,0.5)',textDecoration:'none',transition:'color 0.15s'}}>
                     {link.label}
                   </Link>
                 </li>

@@ -91,6 +91,40 @@
   }
 }
 
+/* Hover interactions — CSS replacements for inline JS hover handlers
+   (event handlers can't be passed from Server Components in the App Router).
+   !important is required because the base values are set via inline style. */
+.footer-social:hover {
+  background: rgba(201, 168, 76, 0.2) !important;
+  color: #C9A84C !important;
+}
+
+.footer-link:hover {
+  color: #C9A84C !important;
+}
+
+.nav-menu-btn:hover {
+  background: rgba(255, 255, 255, 0.06) !important;
+}
+
+.nav-dropdown-item:hover {
+  background: rgba(255, 255, 255, 0.05) !important;
+}
+
+.nav-cta:hover {
+  background: #D4B96A !important;
+}
+
+.hover-lift:hover {
+  transform: translateY(-4px) !important;
+  box-shadow: 0 12px 40px rgba(27, 42, 74, 0.15) !important;
+}
+
+.hover-lift-soft:hover {
+  transform: translateY(-4px) !important;
+  box-shadow: 0 12px 40px rgba(27, 42, 74, 0.12) !important;
+}
+
 @layer utilities {
   .font-700 { font-weight: 700; }
   .font-800 { font-weight: 800; }
