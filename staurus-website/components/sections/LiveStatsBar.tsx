@@ -1,3 +1,5 @@
+'use client'
+
 export function LiveStatsBar() {
   // These will be replaced with live Supabase data
   const stats = [

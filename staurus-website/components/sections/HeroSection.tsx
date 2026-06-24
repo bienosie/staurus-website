@@ -1,3 +1,5 @@
+'use client'
+
 import Link from 'next/link'
 import { ArrowRight, TrendingDown, BarChart3, Shield } from 'lucide-react'
 

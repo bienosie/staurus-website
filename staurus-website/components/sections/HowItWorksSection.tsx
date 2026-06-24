@@ -1,3 +1,5 @@
+'use client'
+
 import Link from 'next/link'
 import { ArrowRight, UserPlus, Search, FileText, PoundSterling, Home } from 'lucide-react'
 
