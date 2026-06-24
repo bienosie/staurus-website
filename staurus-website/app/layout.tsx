@@ -20,13 +20,23 @@ export const metadata: Metadata = {
     siteName: 'Staurus Properties',
     title: 'Staurus Properties | Below Market Value UK Property Investment',
     description: 'Live, data-scored below-market-value opportunities in Manchester and Liverpool. BTL, BRRR, HMO and Social Housing strategies for UK and international investors.',
-    images: [{ url: '/images/og-image.jpg', width: 1200, height: 630, alt: 'Staurus Properties' }],
+    images: [{ url: '/images/og-image.png', width: 1200, height: 630, alt: 'Staurus Properties' }],
   },
   twitter: {
     card: 'summary_large_image',
     site: '@staurusproperti',
     creator: '@staurusproperti',
+    images: ['/images/og-image.png'],
   },
+  icons: {
+    icon: [
+      { url: '/favicon.ico', sizes: 'any' },
+      { url: '/favicon-16x16.png', type: 'image/png', sizes: '16x16' },
+      { url: '/favicon-32x32.png', type: 'image/png', sizes: '32x32' },
+    ],
+    apple: [{ url: '/apple-touch-icon.png', sizes: '180x180' }],
+  },
+  manifest: '/site.webmanifest',
   robots: {
     index: true,
     follow: true,
