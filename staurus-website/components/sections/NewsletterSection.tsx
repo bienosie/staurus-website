@@ -8,14 +8,28 @@ export function NewsletterSection() {
   const [name, setName] = useState('')
   const [submitted, setSubmitted] = useState(false)
   const [loading, setLoading] = useState(false)
+  const [error, setError] = useState('')
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     setLoading(true)
-    // API call to /api/newsletter will be wired up
-    await new Promise(r => setTimeout(r, 800))
-    setSubmitted(true)
-    setLoading(false)
+    setError('')
+    try {
+      const res = await fetch('/api/newsletter', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email, first_name: name }),
+      })
+      if (!res.ok) {
+        setError('Something went wrong. Please check your email and try again.')
+        return
+      }
+      setSubmitted(true)
+    } catch {
+      setError('We could not reach the server. Please try again in a moment.')
+    } finally {
+      setLoading(false)
+    }
   }
 
   return (
@@ -89,6 +103,9 @@ export function NewsletterSection() {
                     {loading ? 'Subscribing...' : <> Subscribe to Weekly Insights <ArrowRight size={15} /> </>}
                   </button>
                 </div>
+                {error && (
+                  <p style={{fontSize:'0.8rem',color:'#fca5a5',marginTop:'12px',lineHeight:1.5}}>{error}</p>
+                )}
                 <p style={{fontSize:'0.7rem',color:'rgba(255,255,255,0.3)',marginTop:'14px',lineHeight:1.5}}>By subscribing you agree to receive weekly emails from Staurus Properties. No spam. Unsubscribe at any time.</p>
               </form>
             )}

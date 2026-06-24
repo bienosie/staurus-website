@@ -1,13 +1,33 @@
-'use client'
+import { getLiveDealStats } from '@/lib/supabase'
 
-export function LiveStatsBar() {
-  // These will be replaced with live Supabase data
+export async function LiveStatsBar() {
+  let live = { count: 0, avgRoi: 0 as number | string, avgBmv: 0 as number | string }
+  try {
+    live = await getLiveDealStats()
+  } catch {
+    live = { count: 0, avgRoi: 0, avgBmv: 0 }
+  }
+
+  const hasLive = Number(live.count) > 0
+
   const stats = [
-    { value: '47', label: 'Active Deals', suffix: '' },
-    { value: '18.4', label: 'Avg BMV Discount', suffix: '%' },
-    { value: '13.2', label: 'Avg Projected ROI', suffix: '%' },
+    {
+      value: hasLive ? String(live.count) : '—',
+      label: 'Active Deals',
+      suffix: '',
+    },
+    {
+      value: hasLive ? String(live.avgBmv) : '—',
+      label: 'Avg BMV Discount',
+      suffix: hasLive ? '%' : '',
+    },
+    {
+      value: hasLive ? String(live.avgRoi) : '—',
+      label: 'Avg Projected BTL ROI',
+      suffix: hasLive ? '%' : '',
+    },
     { value: '9', label: 'Target Postcodes', suffix: '' },
-    { value: '£89k', label: 'Avg Deal Value', suffix: '' },
+    { value: 'M & L', label: 'Active Markets', suffix: '' },
   ]
 
   return (

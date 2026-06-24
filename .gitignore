@@ -1,0 +1,5 @@
+.vercel
+staurus-brand-update.zip
+.env
+.env.local
+.env*.local
